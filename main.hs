@@ -8,3 +8,16 @@
 --    Professor : Bruno de Oliveira Schneider
 -- ===============================================================================
 
+-- Questão 1:
+ultimo :: [t] -> t
+ultimo [u] = u
+ultimo (c:r) = ultimo r
+
+-- Questão 4:
+maiores_que :: (Ord t) => t -> [t] -> [t]
+maiores_que v (c:r)
+    | v < c     = c : maiores_que v r
+    | otherwise = maiores_que v r
+maiores_que _ [] = []
+
+-- Questão 7:
