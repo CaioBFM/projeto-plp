@@ -2,9 +2,9 @@
 
 ## Grupos 1: 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37
 
-- [ ] **1. ultimo:** recebe uma lista e retorna o último elemento da lista.
+- [x] **1. ultimo:** recebe uma lista e retorna o último elemento da lista.
 
-- [ ] **4. maiores_que:** recebe um valor e uma lista de coisas ordenáveis, retorna uma lista com os valores que são maiores que o fornecido.  
+- [x] **4. maiores_que:** recebe um valor e uma lista de coisas ordenáveis, retorna uma lista com os valores que são maiores que o fornecido.  
        ex.: maiores_que 10 [4,6,30,3,15,3,10,7] [30,15]
 
 - [ ] **7. remover_ultimo:** recebe uma lista e retorna a lista sem o último elemento (não há como remover o último elemento de uma lista vazia).
