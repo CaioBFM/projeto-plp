@@ -10,7 +10,7 @@
 
 -- Questão 1:
 ultimo :: [t] -> t
-ultimo [u] = u
+ultimo [u]   = u
 ultimo (c:r) = ultimo r
 
 -- Questão 4:
