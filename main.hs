@@ -1,0 +1,10 @@
+-- ===============================================================================
+--    Trabalho de Programação Funcional 2025/1  -  PLP
+----------------------------------------------------------------------------------
+--    Descrição : Implementação de várias funções em Haskell
+--    Alunos    : Caio Bueno Finocchio Martins  -  202410377
+--                Lana da Silva Miranda         -  202410364
+--    Grupo 1   : 1, 4, 7, 10 ,13, 16, 19, 22, 25, 28, 31, 34 e 37
+--    Professor : Bruno de Oliveira Schneider
+-- ===============================================================================
+
