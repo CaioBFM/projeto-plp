@@ -45,24 +45,26 @@ intercala (c1:r1) (c2:r2) = c1 : c2 : (intercala r1 r2)
 -- Questão 22:
 ordena :: (Ord t) => [t] -> [t]
 ordena [] = []
-ordena l  = accumArv merge (map (\a -> [a]) l)
+ordena l  = accumArv merge (map (\a -> [a]) l) -- merge sort
 
 pares :: (a -> a -> a) -> [a] -> [a]
 pares fun (a:b:r) = (fun a b) : (pares fun r)
 pares _ lista     = lista
 
--- acumulação em árvore
 accumArv :: (t -> t -> t) -> [t] -> t
 accumArv _ [x] = x
 accumArv fun l = accumArv fun (pares fun l)
 
--- merge sort
 merge l1@(c1:r1) l2@(c2:r2)
     | c2 < c1   = c2:(merge l1 r2)
     | otherwise = c1:(merge r1 l2)
 merge l [] = l
 merge [] l = l
 
--- Questão 25
+-- Questão 25:
+rodar_esquerda :: Int -> [t] -> [t]
+rodar_esquerda n l = fim ++ inicio
+  where (inicio, fim) = divide n l
 
+-- Questão 28:
 
