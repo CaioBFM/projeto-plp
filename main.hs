@@ -35,3 +35,7 @@ divide n (c:r) = (c : e1, e2)
     where (e1, e2) = divide (n-1) r
 
 -- Questão 16:
+intercala :: [t] -> [t] -> [t]
+intercala [] l = l
+intercala l [] = l 
+intercala (c1:r1) (c2:r2) = c1 : c2 : (intercala r1 r2)
