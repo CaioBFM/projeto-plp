@@ -26,3 +26,12 @@ remover_ultimo [c]   = []
 remover_ultimo (c:r) = c : remover_ultimo r
 
 -- Questão 10:
+
+-- Questão 13:
+divide :: Int -> [t] -> ([t], [t])
+divide 0 l     = ([], l)
+divide _ []    = ([], [])
+divide n (c:r) = (c : e1, e2)
+    where (e1, e2) = divide (n-1) r
+
+-- Questão 16:
