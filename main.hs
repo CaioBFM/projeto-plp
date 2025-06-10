@@ -21,3 +21,8 @@ maiores_que v (c:r)
 maiores_que _ [] = []
 
 -- Questão 7:
+remover_ultimo :: [t] -> [t]
+remover_ultimo [c]   = []
+remover_ultimo (c:r) = c : remover_ultimo r
+
+-- Questão 10:
