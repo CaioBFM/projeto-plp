@@ -96,3 +96,23 @@ rodar_esquerda :: Int -> [t] -> [t]
 rodar_esquerda n l = fim ++ inicio
   where (inicio, fim) = divide n l
 
+-- Questao 28
+primeira_maiusculas :: [Char] -> [Char]
+primeira_maiusculas [] = []
+primeira_maiusculas (c:r)
+    -- | c == ' ' = ' ' : primeira_maiusculas r
+    -- | otherwise = aux1 (c:r) ++ primeira_maiusculas r
+    | c == ' ' = aux1 r ++ primeira_maiusculas r
+    | otherwise = primeira_maiusculas r
+    where
+        aux1 []    = []
+        aux1 (c:r)
+            | c >= 'a' && c <= 'z' = (toEnum(fromEnum c - 32) : aux2 r)
+            | otherwise            = c : aux2 r
+            where 
+                aux2 [] = []
+                aux2 (c:r) = aux3 c : aux2 r
+                    where 
+                        aux3 c
+                            | c >= 'A' && c <= 'Z' = toEnum(fromEnum c + 32)
+                            | otherwise            = c
