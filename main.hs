@@ -33,6 +33,36 @@ pertence e (c:r)
 pertence _ _= False
 
 -- Questão 10:
+-- Função principal: maiores
+maiores :: (Ord t) => Int -> [t] -> [t]
+maiores 0 _ = []
+maiores _ [] = []
+maiores n l = filtra l maioresN
+    where
+        -- Gera a lista dos n maiores elementos (pode ter repetidos)
+        maioresN = maioresAux n l
+        
+        maioresAux 0 _ = []
+        maioresAux _ [] = []
+        maioresAux n l =  m : maioresAux (n-1) (removePrimeiro m l)
+            where m = maior l
+
+        -- Filtra mantendo a ordem original e removendo cada ocorrência encontrada
+        filtra [] _ = []
+        filtra (c:r) l2
+            | c elem l2 = c : filtra r (removePrimeiro c l2) -- elem: verifica se um elemento está presente em uma lista
+            | otherwise = filtra r l2maior :: (Ord t) => [t] -> t -- Função auxiliar: encontra o maior elemento de uma lista não vazia
+        maior [u] = u
+        maior (c:r)
+            | c > maior r     = c
+            | otherwise = maior r
+
+-- Função auxiliar: remove a primeira ocorrência de um elemento
+removePrimeiro :: (Eq t) => t -> [t] -> [t]
+removePrimeiro _ [] = []
+removePrimeiro m (c:r)
+    | m == c    = r
+    | otherwise = c : removePrimeiro m r
 
 -- Questão 13:
 divide :: Int -> [t] -> ([t], [t])
