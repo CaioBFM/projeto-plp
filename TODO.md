@@ -1,6 +1,6 @@
 # Lista de Tarefas — Trabalho de Programação Funcional
 
-## Grupos 1: 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37
+## Grupo 1: 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37
 
 - [x] **1. ultimo:** recebe uma lista e retorna o último elemento da lista.
 
@@ -19,7 +19,7 @@
       ex.: intercala [1,2,3] [4,5] [1,4,2,5,3] ⇒
       intercala [] [1,2,3] [1,2,3]
 
-- [ ] **19. mesmos_elementos:** recebe duas listas e verifica se elas tem os mesmos elementos (elementos repetidos são o mesmo elemento).  
+- [x] **19. mesmos_elementos:** recebe duas listas e verifica se elas tem os mesmos elementos (elementos repetidos são o mesmo elemento).  
        ex.: mesmos_elementos [2,4,2,1] [1,2,4] True
 
 - [x] **22. ordena:** recebe uma lista e retorna outra lista com os seus itens ordenados.  
@@ -42,4 +42,4 @@
        palindromo "abbccbba" True ⇒  
        palindromo "abbdbbaa" False
 
-- [ ] **37. bolha:** recebe uma lista e retorna a lista ordenada, pelo método da bolha (bolha burra – aquela versão em que não se verifica se houve alguma troca para parar mais cedo)
+- [x] **37. bolha:** recebe uma lista e retorna a lista ordenada, pelo método da bolha (bolha burra – aquela versão em que não se verifica se houve alguma troca para parar mais cedo)
