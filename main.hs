@@ -123,7 +123,6 @@ primeira_maiusculas = aux True
 
 -- Questão 31:
 mediana :: [Rational] -> Double
-mediana [] = 0
 mediana l
   | odd n     = fromRational (pegarElemento meioIdx lOrd)
   | otherwise = fromRational ((pegarElemento (meioIdx - 1) lOrd + pegarElemento meioIdx lOrd) / 2)
