@@ -141,3 +141,17 @@ palindromo :: (Eq t) => [t] -> Bool
 palindromo l
     | l == (reverse l) = True
     | otherwise        = False
+
+-- Questão 37:
+bolha :: (Ord t) => [t] -> [t]
+bolha l = bolhaAux (length l) l
+  where
+    -- Realiza n-1 passagens pela lista
+    bolhaAux 0 l = l
+    bolhaAux n l = bolhaAux (n-1) (bolhaIteracao l)
+
+    -- Uma iteracao do bubble sort: compara pares e troca se necessário
+    bolhaIteracao (a:b:r)
+      | a > b     = b : bolhaIteracao (a:r)
+      | otherwise = a : bolhaIteracao (b:r)
+    bolhaIteracao r = r
