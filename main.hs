@@ -37,6 +37,7 @@ maiores :: (Ord t, Eq t) => Int -> [t] -> [t]
 maiores n l = filter (\x -> pertence x maioresN) l
     where
         maioresN = pegaNMaiores n (reverse (ordena l))
+        
 -- Função auxiliar:
 pegaNMaiores:: Int -> [t] -> [t]
 pegaNMaiores n l = pegaNMaiores' n l
@@ -66,6 +67,23 @@ intercala l [] = l
 intercala (c1:r1) (c2:r2) = c1 : c2 : (intercala r1 r2)
 
 -- Questão 19:
+mesmos_elementos :: (Eq t) => [t] -> [t] -> Bool
+mesmos_elementos l1 l2 =
+    let s1 = remove_duplicatas l1
+        s2 = remove_duplicatas l2
+    in todos_pertencem s1 s2 && todos_pertencem s2 s1
+
+-- Função auxiliar:
+remove_duplicatas :: (Eq t) => [t] -> [t]
+remove_duplicatas [] = []
+remove_duplicatas (c:r)
+    | pertence c r = remove_duplicatas r
+    | otherwise     = c : remove_duplicatas r
+
+-- Função auxiliar: verifica se todos os elementos de a estão em b
+todos_pertencem :: (Eq t) => [t] -> [t] -> Bool
+todos_pertencem [] _ = True
+todos_pertencem (c:r) l = pertence c l && todos_pertencem r l
 
 -- Questão 22:
 ordena :: (Ord t) => [t] -> [t]
@@ -117,3 +135,9 @@ mediana l
     pegarElemento :: Int -> [a] -> a
     pegarElemento 0 (c:_)  = c
     pegarElemento k (_:r) = pegarElemento (k-1) r
+  
+-- Questão 34:
+palindromo :: (Eq t) => [t] -> Bool
+palindromo l
+    | l == (reverse l) = True
+    | otherwise        = False
