@@ -74,22 +74,22 @@ intercala l [] = l
 intercala (c1:r1) (c2:r2) = c1 : c2 : (intercala r1 r2)
 
 -- questao 19
-remove_duplicatas :: (Eq t) => [t] -> [t]
-remove_duplicatas [] = []
-remove_duplicatas (x:xs)
-    | pertence x xs = remove_duplicatas xs
-    | otherwise     = x : remove_duplicatas xs
-
 mesmos_elementos :: (Eq t) => [t] -> [t] -> Bool
 mesmos_elementos l1 l2 =
     let s1 = remove_duplicatas l1
         s2 = remove_duplicatas l2
     in todos_pertencem s1 s2 && todos_pertencem s2 s1
 
+remove_duplicatas :: (Eq t) => [t] -> [t]
+remove_duplicatas [] = []
+remove_duplicatas (c:r)
+    | pertence c r = remove_duplicatas r
+    | otherwise     = c : remove_duplicatas r
+
 -- verifica se todos os elementos de a estão em b
 todos_pertencem :: (Eq t) => [t] -> [t] -> Bool
 todos_pertencem [] _ = True
-todos_pertencem (x:xs) ys = pertence x ys && todos_pertencem xs ys
+todos_pertencem (c:r) l = pertence c l && todos_pertencem r l
 
 -- Questao 22 bolsonaro
 rodar_esquerda :: Int -> [t] -> [t]
@@ -97,22 +97,15 @@ rodar_esquerda n l = fim ++ inicio
   where (inicio, fim) = divide n l
 
 -- Questao 28
-primeira_maiusculas :: [Char] -> [Char]
-primeira_maiusculas [] = []
-primeira_maiusculas (c:r)
-    -- | c == ' ' = ' ' : primeira_maiusculas r
-    -- | otherwise = aux1 (c:r) ++ primeira_maiusculas r
-    | c == ' ' = aux1 r ++ primeira_maiusculas r
-    | otherwise = primeira_maiusculas r
-    where
-        aux1 []    = []
-        aux1 (c:r)
-            | c >= 'a' && c <= 'z' = (toEnum(fromEnum c - 32) : aux2 r)
-            | otherwise            = c : aux2 r
-            where 
-                aux2 [] = []
-                aux2 (c:r) = aux3 c : aux2 r
-                    where 
-                        aux3 c
-                            | c >= 'A' && c <= 'Z' = toEnum(fromEnum c + 32)
-                            | otherwise            = c
+primeira_maiusculas :: String -> String
+primeira_maiusculas = aux True
+  where
+    aux _ [] = []
+    aux True (c:r)  -- início de palavra
+      | c >= 'a' && c <= 'z' = toEnum (fromEnum c - 32) : aux False r
+      | otherwise            = c : aux (c == ' ') r -- sempre que encontra um espaço, booleano fica true e entende que esta dentro de uma palavra
+    aux False (c:r) -- dentro da palavra
+      | c >= 'A' && c <= 'Z' = toEnum (fromEnum c + 32) : aux (c == ' ') r
+      | otherwise            = c : aux (c == ' ') r
+    
+                            
