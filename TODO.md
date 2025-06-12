@@ -9,7 +9,7 @@
 
 - [x] **7. remover_ultimo:** recebe uma lista e retorna a lista sem o último elemento (não há como remover o último elemento de uma lista vazia).
 
-- [ ] **10. maiores:** recebe um número natural n e uma lista, retorna uma lista com os n maiores elementos sem alterar a ordem entre os elementos.
+- [x] **10. maiores:** recebe um número natural n e uma lista, retorna uma lista com os n maiores elementos sem alterar a ordem entre os elementos.
 
 - [x] **13. divide:** recebe uma lista e um número natural n, retorna um par onde o primeiro elemento é uma lista com os n primeiros números da lista original e o segundo elemento é uma lista com o resto dos elementos da lista original.  
        ex.: divide [1,2,3,4] 0 ([],[1,2,3,4]) ⇒  
@@ -31,13 +31,13 @@
        rodar_esquerda 3 [1,2,3,4,5] [4,5,1,2,3] ⇒  
        rodar_esquerda 9 [1,2,3,4,5] [5,1,2,3,4]
 
-- [ ] **28. primeiras_maiusculas:** recebe uma string qualquer e retorna outra string onde somente as iniciais são maiúsculas.  
+- [x] **28. primeiras_maiusculas:** recebe uma string qualquer e retorna outra string onde somente as iniciais são maiúsculas.  
        ex.: primeiras_maiusculas "FuLaNo bElTrAnO silva" "Fulano Beltrano Silva"
 
-- [ ] **31. mediana:** calcula a mediana de uma lista de números racionais.  
+- [x] **31. mediana:** calcula a mediana de uma lista de números racionais.  
        ex.: mediana [6,2,9,0,8,3,0,2] 2.5
 
-- [ ] **34. palindromo:** recebe uma lista e verifica se ela é palíndromo ou não.  
+- [x] **34. palindromo:** recebe uma lista e verifica se ela é palíndromo ou não.  
        ex.: palindromo "ana" True ⇒  
        palindromo "abbccbba" True ⇒  
        palindromo "abbdbbaa" False
