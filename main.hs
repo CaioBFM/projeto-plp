@@ -103,14 +103,17 @@ primeira_maiusculas = aux True
       | c >= 'A' && c <= 'Z' = toEnum (fromEnum c + 32) : aux (c == ' ') r
       | otherwise            = c : aux (c == ' ') r
 
--- -- Questão 31:
--- mediana :: [Rational] -> Double
--- mediana [] = 0
--- mediana l
---   | oddLen    = fromRational (lOrd !! meioIdx)  -- Tamanho ímpar: pega o elemento do meio e converte para Double com from Rational
---   | otherwise = fromRational ((lOrd !! (meioIdx - 1) + lOrd !! meioIdx) / 2)  -- Tamanho par: faz a média dos dois centrais e converte para Double
---   where
---     lOrd = ordena l  
---     n = length lOrd  -- Calcula o tamanho da lista ordenada
---     oddLen = odd n   -- Tamanho é ímpar?
---     meioIdx = n div 2  -- Índice do elemento central (para ímpar) ou do segundo central (para par)
+-- Questão 31:
+mediana :: [Rational] -> Double
+mediana [] = 0
+mediana l
+  | odd n     = fromRational (pegarElemento meioIdx lOrd)
+  | otherwise = fromRational ((pegarElemento (meioIdx - 1) lOrd + pegarElemento meioIdx lOrd) / 2)
+  where
+    lOrd = ordena l
+    n = length lOrd
+    meioIdx = n `div` 2
+
+    pegarElemento :: Int -> [a] -> a
+    pegarElemento 0 (c:_)  = c
+    pegarElemento k (_:r) = pegarElemento (k-1) r
