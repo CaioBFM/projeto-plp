@@ -25,6 +25,13 @@ remover_ultimo :: [t] -> [t]
 remover_ultimo [c]   = []
 remover_ultimo (c:r) = c : remover_ultimo r
 
+-- Função auxiliar pertence
+pertence :: (Eq t) => t -> [t] -> Bool 
+pertence e (c:r) 
+    | e == c    = True
+    | otherwise = pertence e r
+pertence _ _= False
+
 -- Questão 10:
 
 -- Questão 13:
@@ -67,4 +74,14 @@ rodar_esquerda n l = fim ++ inicio
   where (inicio, fim) = divide n l
 
 -- Questão 28:
+primeira_maiusculas :: String -> String
+primeira_maiusculas = aux True
+  where
+    aux _ [] = []
+    aux True (c:r)  -- início de palavra
+      | c >= 'a' && c <= 'z' = toEnum (fromEnum c - 32) : aux False r
+      | otherwise            = c : aux (c == ' ') r -- sempre que encontra um espaço, booleano fica true e entende que esta dentro de uma palavra
+    aux False (c:r) -- dentro da palavra
+      | c >= 'A' && c <= 'Z' = toEnum (fromEnum c + 32) : aux (c == ' ') r
+      | otherwise            = c : aux (c == ' ') r
 
