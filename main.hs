@@ -6,6 +6,7 @@
 --                Lana da Silva Miranda         -  202410364
 --    Grupo 1   : 1, 4, 7, 10 ,13, 16, 19, 22, 25, 28, 31, 34 e 37
 --    Professor : Bruno de Oliveira Schneider
+--    Link do repositório remoto do projeto: https://github.com/CaioBFM/projeto-plp (testes, readme, etc)
 -- ==========================================================================================================
 
 --Questão 1: recebe uma lista e retorna o último elemento da lista.
