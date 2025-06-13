@@ -54,11 +54,11 @@ removePrimeiro m (c:r)
     | otherwise = c : removePrimeiro m r
 
 -- Questão 13:
-divide :: Int -> [t] -> ([t], [t])
-divide 0 l     = ([], l)
-divide _ []    = ([], [])
-divide n (c:r) = (c : e1, e2)
-    where (e1, e2) = divide (n-1) r
+divide :: [t] -> Int -> ([t], [t])
+divide l 0     = ([], l)
+divide [] _    = ([], [])
+divide (c:r) n = (c : e1, e2)
+    where (e1, e2) = divide r (n-1)
 
 -- Questão 16:
 intercala :: [t] -> [t] -> [t]
@@ -107,7 +107,12 @@ merge [] l = l
 -- Questão 25:
 rodar_esquerda :: Int -> [t] -> [t]
 rodar_esquerda n l = fim ++ inicio
-  where (inicio, fim) = divide n l
+  where
+    tam = length l
+    n'
+      | tam == 0  = 0
+      | otherwise = mod n tam
+    (inicio, fim) = divide l n'
 
 -- Questão 28:
 primeira_maiusculas :: String -> String
