@@ -1,0 +1,45 @@
+# Lista de Tarefas — Trabalho de Programação Funcional
+
+## Grupo 1: 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37
+
+- [x] **1. ultimo:** recebe uma lista e retorna o último elemento da lista.
+
+- [x] **4. maiores_que:** recebe um valor e uma lista de coisas ordenáveis, retorna uma lista com os valores que são maiores que o fornecido.  
+       ex.: maiores_que 10 [4,6,30,3,15,3,10,7] [30,15]
+
+- [x] **7. remover_ultimo:** recebe uma lista e retorna a lista sem o último elemento (não há como remover o último elemento de uma lista vazia).
+
+- [x] **10. maiores:** recebe um número natural n e uma lista, retorna uma lista com os n maiores elementos sem alterar a ordem entre os elementos.
+
+- [x] **13. divide:** recebe uma lista e um número natural n, retorna um par onde o primeiro elemento é uma lista com os n primeiros números da lista original e o segundo elemento é uma lista com o resto dos elementos da lista original.  
+       ex.: divide [1,2,3,4] 0 ([],[1,2,3,4]) ⇒  
+       divide [1,2,3,4] 2 ([1,2],[3,4])
+
+- [x] **16. intercala:** recebe duas listas e retorna outra lista com os elementos das listas originais intercalados.
+      ex.: intercala [1,2,3] [4,5] [1,4,2,5,3] ⇒
+      intercala [] [1,2,3] [1,2,3]
+
+- [x] **19. mesmos_elementos:** recebe duas listas e verifica se elas tem os mesmos elementos (elementos repetidos são o mesmo elemento).  
+       ex.: mesmos_elementos [2,4,2,1] [1,2,4] True
+
+- [x] **22. ordena:** recebe uma lista e retorna outra lista com os seus itens ordenados.  
+       ex.: ordena [7,3,5,7,8,4,4] [3,4,4,5,7,7,8]
+
+- [x] **25. rodar_esquerda:** recebe um número natural, uma lista e retorna uma nova lista onde a posição dos elementos mudou como se eles tivessem sido “rodados”.  
+       ex.: rodar_esquerda 0 [1,2,3,4,5] [1,2,3,4,5] ⇒  
+       rodar_esquerda 1 [1,2,3,4,5] [2,3,4,5,1] ⇒  
+       rodar_esquerda 3 [1,2,3,4,5] [4,5,1,2,3] ⇒  
+       rodar_esquerda 9 [1,2,3,4,5] [5,1,2,3,4]
+
+- [x] **28. primeiras_maiusculas:** recebe uma string qualquer e retorna outra string onde somente as iniciais são maiúsculas.  
+       ex.: primeiras_maiusculas "FuLaNo bElTrAnO silva" "Fulano Beltrano Silva"
+
+- [x] **31. mediana:** calcula a mediana de uma lista de números racionais.  
+       ex.: mediana [6,2,9,0,8,3,0,2] 2.5
+
+- [x] **34. palindromo:** recebe uma lista e verifica se ela é palíndromo ou não.  
+       ex.: palindromo "ana" True ⇒  
+       palindromo "abbccbba" True ⇒  
+       palindromo "abbdbbaa" False
+
+- [x] **37. bolha:** recebe uma lista e retorna a lista ordenada, pelo método da bolha (bolha burra – aquela versão em que não se verifica se houve alguma troca para parar mais cedo)
